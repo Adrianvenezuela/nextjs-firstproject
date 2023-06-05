@@ -5,23 +5,27 @@ function Users({ users }) {
   const router = useRouter();
 
   return (
-    <ul>
-      {users.map((users) => (
-        <li key={users.id}>
-          onClick=
-          {() => {
-            router.push(`/users/${users.id}`);
-          }}
-          {() => {
+    <ul className="list-group">
+      {users.map((user) => (
+        <li
+          key={user.id}
+          className="list-group-item d-flex 
+          justify-content-between align-items-Center list-group-item-action"
+          onClick={() => {
             router.push("/users/${user.id}");
           }}
+        >
           <div>
             <h5>
-              {users.id} {Users.first_name} {users.last_name}{" "}
+              {user.id} {user.first_name} {user.last_name}
             </h5>
-            <p>{users.email}</p>
+            <p>{user.email}</p>
           </div>
-          <img src={users.avatar} alt="{user.email}" />
+          <img
+            src={user.avatar}
+            alt="{user.email}"
+            style={{ borderRadius: "50%" }}
+          />
         </li>
       ))}
     </ul>
