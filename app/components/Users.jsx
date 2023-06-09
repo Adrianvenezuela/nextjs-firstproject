@@ -12,7 +12,7 @@ function Users({ users }) {
           className="list-group-item d-flex 
           justify-content-between align-items-Center list-group-item-action"
           onClick={() => {
-            router.push("/users/${user.id}");
+            router.push(`/users/${user.id}`);
           }}
         >
           <div>
